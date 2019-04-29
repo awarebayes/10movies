@@ -1,0 +1,65 @@
+.films-navbar .selected {
+    background-color: #363636;
+    color: #fff;
+    font-size: 20px;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.films-navbar .selected-film {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    animation: 0.3s ease-out 0s 1 slideInFromLeft;
+}
+
+.films-navbar .fade-wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding: 26px;
+    background-color: rgba(6,6,6, .90);
+    font-size: 22px;
+    width: 100%;
+}
+
+.films-navbar .selected-film  .title {
+    background-color: transparent;
+    width: 200px;
+    padding: 0;
+    display: inline-block;
+    font-weight: 400;
+}
+.films-navbar .selected-film  div {
+    margin: auto;
+}
+
+.films-navbar input{
+    width: 40px;
+}
+.films-navbar .cancel {
+    font-size: 24px;
+    color: #fe4141;
+}
+
+.films-navbar .star {
+    font-size: 22px;
+    color: #ffdb4a;
+}
+
+.films-navbar .selected-film {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+}
+

@@ -1,0 +1,48 @@
+body {
+  min-height: 100vh;
+}
+
+.column {
+  background-color: #fff;
+}
+
+.films-navbar {
+  background-color: #1e1b26;
+}
+
+.h100 {
+  min-height: 100vh;
+  margin: 0;
+}
+
+.nopad {
+  padding: 0;
+}
+
+.columns:last-child {
+  margin-bottom: 0;
+}
+
+.films-navbar .title {
+  padding: 16px;
+  background-color: #1e1b26 ;
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+}
+
+
+.header .title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding: 50px 0 20px;
+}
+
+.header .search-input {
+  width: 300px;
+}
+
+.header .search-field {
+  margin-bottom: 20px;
+}

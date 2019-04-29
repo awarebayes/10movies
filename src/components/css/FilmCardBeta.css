@@ -1,0 +1,275 @@
+.cellphone-container {
+    width: 375px;
+    height: 650px;
+    background-color: #1e1b26;
+    margin: 90px auto auto;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.cellphone-container:hover {
+    transition: 0.3s;
+    box-shadow: 5px 5px 115px -10px rgba(0,0,0, 0.3);
+}
+
+
+.menu {
+    position: absolute;
+    left: 12px;
+    top: 6px;
+    z-index: 999;
+}
+.menu i {
+    font-size: 40px;
+    color: #fe4141;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+.movie-img {
+    width: 100%;
+    height: 380px;
+    background: url("http://media.idownloadblog.com/wp-content/uploads/2014/12/interstellar-wide-space-film-movie-art-9-wallpaper.jpg");
+    /*background-size: contain;*/
+    background-size: cover;
+    z-index: 111 !important;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, black), color-stop(0.35, black), color-stop(0.5, black), color-stop(0.65, black), color-stop(0.85, rgba(0, 0, 0, 0.6)), color-stop(1, transparent));
+    position: relative;
+}
+
+.movie {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+39,1e1b26+53&0+38,1+55 */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, #1e1b26 55%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, #1e1b26 55%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, #1e1b26 55%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#1e1b26',GradientType=0 );
+    /* IE6-9 */
+    position: absolute;
+    background-size: contain;
+    background-size: cover;
+    z-index: 1 !important;
+    width: 375px;
+    height: 620px;
+    display: block;
+    border-radius: 4px;
+}
+
+.text-movie-cont {
+    padding: 0 12px;
+    text-align: justify;
+}
+
+.action-btn {
+    text-align: right;
+}
+.action-btn i {
+    color: #fe4141;
+    font-size: 28px;
+    text-align: right;
+}
+
+.watch-btn {
+    display: block;
+    border: 1px solid #fe4141;
+    border-radius: 5px;
+    padding: 4px;
+    width: 130px;
+    transition: 0.3s;
+}
+
+.watch-btn:hover {
+    background-color: #fe4141;
+    transition: 0.3s;
+}
+.watch-btn:hover h3 {
+    color: white;
+    transition: 0.3s;
+}
+
+.watch-btn h3 i {
+    font-size: 14px;
+    margin-right: 2px;
+    position: relative;
+    float: left;
+    line-height: 1;
+}
+
+.movie .action-row {
+    margin-top: 24px;
+}
+
+.movie.summary-row {
+    margin-top: 12px;
+}
+
+.movie .title-row {
+    height: 81px;
+}
+
+.title-row .col1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* TYPOGRAPHY STARTS */
+/* Fonts */
+.movie h1, h2, h3, h4, h5 {
+    font-family: "Montserrat", sans-serif;
+    color: #e7e7e7;
+    margin: 0;
+}
+
+.movie h1 {
+    font-weight: 400;
+    color: #fff;
+    font-size: 36px;
+}
+
+.movie h3 {
+    font-size: 13px !important;
+    font-weight: 400;
+    color: #fe4141;
+}
+
+.movie  h5 {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.movie-gen, .movie-likes {
+    margin: 0;
+    padding: 0;
+}
+.movie-gen li, .movie-likes li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    color: #818181;
+    width: auto;
+    display: block;
+    float: left;
+    margin-right: 6px;
+    font-weight: 600;
+}
+
+.movie-likes {
+    float: right;
+}
+.movie-likes li {
+    color: #fe4141;
+}
+.movie-likes li:last-child {
+    margin-right: 0;
+}
+.movie-likes li i {
+    font-size: 14px;
+    margin-right: 4px;
+    position: relative;
+    float: left;
+    line-height: 1;
+}
+
+.movie-details {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #b4b4b4;
+}
+
+.movie-description {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #9b9b9b;
+    text-align: justify;
+    height: 72px;
+}
+
+.movie-actors {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #e7e7e7;
+    font-style: italic;
+}
+
+/* TYPOGRAPHY ENDS */
+/** GRID STARTS **/
+.thegrid {
+    margin: 0 auto;
+}
+
+.elements-distance, .movie-details, .movie-description, .movie-actors {
+    margin: 0;
+}
+
+.mr-grid {
+    width: 100%;
+}
+
+.mr-grid:before, .mr-grid:after {
+    content: "";
+    display: table;
+}
+
+.mr-grid:after {
+    clear: both;
+}
+
+.mr-grid {
+    *zoom: 1;
+}
+
+.col1, .col2, .col3, .col3rest, .col4, .col4rest, .col5, .col5rest, .col6, .col6rest {
+    margin: 0 0.5% 0.5% 0.5%;
+    padding: 1%;
+    float: left;
+    display: block;
+}
+
+/* Columns match, minus margin sum. E.G. margin-left+margin-right=1%, col2=50%-1% - added padding:1%*/
+.col1 {
+    width: 98%;
+}
+
+.col2 {
+    width: 47%;
+}
+
+.col3 {
+    width: 30.3333333333%;
+}
+
+.col4 {
+    width: 22%;
+}
+
+.col5 {
+    width: 17%;
+}
+
+.col6 {
+    width: 13.6666666667%;
+}
+
+/* Columns match with their individual number. E.G. col3+col3rest=full width row */
+.col3rest {
+    width: 63.6666666667%;
+}
+
+.col4rest {
+    width: 72%;
+}
+
+.col5rest {
+    width: 77%;
+}
+
+.col6rest {
+    width: 80.3333333333%;
+}
