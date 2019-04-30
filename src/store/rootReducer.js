@@ -19,6 +19,8 @@ let initialState = {
     page: 1,
     search_result: window.movies.map(x=>x.id),
     sortBy: 'id',
+    predicting: false,
+    predicted: null,
 };
 initialState.films_shown = initialState.search_result.slice(0,15);
 
@@ -111,6 +113,18 @@ function rootReducer(state = initialState, action) {
         let stateCopy = JSON.parse(JSON.stringify(state));
         if(0 <= action.payload.rating && action.payload.rating <= 10) stateCopy.films_selected[action.payload.id] = action.payload.rating;
         return stateCopy;
+    }
+
+    if (action.type === "TOGGLE_PREDICTING"){
+        return Object.assign({}, state, {
+            predicting: action.payload,
+        });
+    }
+
+    if (action.type === "FETCHED_PREDICTIONS"){
+        return Object.assign({}, state, {
+            predictions: action.payload,
+        });
     }
 
 

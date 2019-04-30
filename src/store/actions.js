@@ -25,3 +25,12 @@ export function selectPage(payload) {
 export function sortBy(payload) {
     return { type: "SORT_BY", payload}
 }
+
+
+export function fetchedPredictions(payload) {
+    return {type: "FETCHED_PREDICTIONS", payload}
+}
+
+export function togglePredicting(payload) {
+    return {type: "TOGGLE_PREDICTING", payload}
+}
