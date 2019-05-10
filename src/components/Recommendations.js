@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import './css/Recommendations.css'
 import 'bulma-pageloader/dist/css/bulma-pageloader.min.css'
 import {togglePredicting, fetchedPredictions} from "../store/actions";
+import VisProvider from './../visualizations/VisProvider'
 
 
 const mapStateToProps = state => {
@@ -29,40 +30,37 @@ class Recommendations_ extends Component{
         return this.state !== nextState;
     }
 
+    
+
     predict(){
         this.props.togglePredicting(true);
-        window.server.emit("predict", this.props.films_selected);
+        //window.server.emit("predict", this.props.films_selected);
+        setTimeout(() => {
+            window.store.dispatch(fetchedPredictions([{
+                'kind': 'SimpleTable',
+                'name': 'Score',
+                'index': ['id', 'score'],
+                'data':[[111931, 3.22],
+                [6212,4.65],
+                [47148, 2.31],
+                [4339, 4.96],
+                [26887, 3.42],
+                [33683, 2.33],
+                [5951, 3.2],
+                [115678, 1.2],
+                [94126, 3.4],
+                [129030, 4.9,]],},
+
+            ]));
+            window.store.dispatch(togglePredicting(false));
+        }, 1000);
     }
 
 
     render(){
-
-
-        let films = [];
-        for(let i=0; i<10; i++){
-            films.push(window.movies[Math.floor(Math.random() *  window.movies.length)]);
-        }
-
-        console.log(films.map(x=>x.id));
-
-
-        let tbody = (
-        <tbody>
-        {films.map((f, idx)=>
-            <tr>
-            <th>{idx}</th>
-            <td>{f.title.slice(0, 40)}</td>
-            <td>{f.id}</td>
-            <td>{f.genres}</td>
-            <td>{f.rating}</td>
-                <td>{Math.floor(Math.random() *  10)}</td>
-            </tr>
-
-        )}
-        </tbody>
-        );
-
         let pageLoader = (<span/>);
+        let predict_btn = (<span/>);
+        let visualizer = (<span/>);
 
         if(this.props.predicting){
             pageLoader = (
@@ -70,23 +68,28 @@ class Recommendations_ extends Component{
             );
         }
 
-        let predict_btn = (<span/>);
-
-        if(!this.props.predicting && this.props.predictions === null){
+        if(this.props.predicting === false && this.props.predicted === null){
             predict_btn = (
                 <div>
                     <h1> All movies are selected. Rate them wisely. Then hit predict on the button below. </h1>
                     <a className="button is-large is-rounded is-success" onClick={()=>this.predict()}>predict</a>
                 </div>
-            )
+            );
+        }
+
+        if(this.props.predicting === false && this.props.predicted !== null){
+            visualizer = (
+                <div>
+                    <VisProvider predicted={this.props.predicted} /> 
+                </div>
+            );
         }
 
         return (
             <div className="table_div">
                 {pageLoader}
                 {predict_btn}
-                
-
+                {visualizer}
             </div>
 
         )

@@ -123,7 +123,7 @@ function rootReducer(state = initialState, action) {
 
     if (action.type === "FETCHED_PREDICTIONS"){
         return Object.assign({}, state, {
-            predictions: action.payload,
+            predicted: action.payload,
         });
     }
 

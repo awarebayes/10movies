@@ -19,13 +19,16 @@ import movies from './data/web.json';
 
 // socket
 import io from 'socket.io-client';
-const socket = io('http://localhost:3001');
-window.server = socket;
+/*
+//const socket = io('http://localhost:3001');
+//window.server = socket;
 
 socket.on('done_predicting', function(data){
     window.store.dispatch(fetchedPredictions(data));
     window.store.dispatch(togglePredicting(false));
 });
+
+*/
 
 // movies
 window.movies = movies;
@@ -43,6 +46,47 @@ const mapStateToProps = state => {
 // main
 
 class App_ extends Component {
+
+  componentDidMount(){
+    // Debug only
+    window.store.dispatch(togglePredicting(true));
+    setTimeout(() => {
+        window.store.dispatch(fetchedPredictions([
+          {
+            'kind': 'SimpleTable',
+            'name': 'Score',
+            'index': ['id', 'score', 'string'],
+            'data':[[111931, 3.22, 'i'],
+            [6212,4.65, 'hate'],
+            [47148, 2.31, 'javascript'],
+            [4339, 4.96, 'very'],
+            [26887, 3.42, 'very'],
+            [33683, 2.33, 'much'],
+            [5951, 3.2, 'i am so done'],
+            [115678, 1.2, 'now i am'],
+            [94126, 3.4, 'going'],
+            [129030, 4.9, 'to']],
+          },
+            {
+              'kind': 'SimpleTable',
+              'name': 'Score',
+              'index': ['id', 'score', 'string'],
+              'data':[[111931, 3.22, 'i'],
+              [6212,4.65, 'hate'],
+              [47148, 2.31, 'javascript'],
+              [4339, 4.96, 'very'],
+              [26887, 3.42, 'very'],
+              [33683, 2.33, 'much'],
+              [5951, 3.2, 'i am so done'],
+              [115678, 1.2, 'now i am'],
+              [94126, 3.4, 'going'],
+              [129030, 4.9, 'to']],
+            },
+
+        ]));
+        window.store.dispatch(togglePredicting(false));
+    }, 100);
+  }
 
   render() {
 
@@ -63,6 +107,9 @@ class App_ extends Component {
     if(Object.keys(this.props.films_selected).length === 10){
       body = <Recommendations/>
     }
+
+    // Debug
+    body = <Recommendations/>
 
     return (
       <div className="App">
